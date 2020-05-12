@@ -1,0 +1,259 @@
+//!!!!!!!!!!!!!!! BUTTONS !!!!!!!!!!!!!!!!!!//
+
+.button {
+  @include button
+}
+
+.prev {
+  position: absolute;
+  top: 45%;
+  transform: rotate(-45deg);
+  left: 90px;
+  width: 60px;
+  height: 60px;
+  border-top: 2px solid rgba(255, 255, 255, .5);
+  border-left: 2px solid rgba(255, 255, 255, .5);
+  border-right: none;
+  outline: 0;
+  background: 0 0;
+  border-bottom: none;
+  transition: all 0.3s;
+
+  &:hover {
+    border-top: 2px solid #d3c1ad;
+    border-left: 2px solid #d3c1ad;
+  }
+
+  &:active {
+    transform: rotate(-60deg);
+  }
+}
+
+.next {
+  position: absolute;
+  top: 45%;
+  transform: rotate(45deg);
+  right: 90px;
+  width: 60px;
+  height: 60px;
+  border-top: 2px solid rgba(255, 255, 255, .5);
+  border-right: 2px solid rgba(255, 255, 255, .5);
+  border-left: none;
+  outline: 0;
+  background: 0 0;
+  border-bottom: none;
+  transition: all 0.3s;
+
+  &:hover {
+    border-top: 2px solid #d3c1ad;
+    border-right: 2px solid #d3c1ad;
+  }
+
+  &:active {
+    transform: rotate(60deg);
+  }
+}
+
+.tns-nav {
+  position: absolute;
+  bottom: 42px;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.tns-nav {
+  [data-nav] {
+    width: 11px;
+    height: 11px;
+    border: none;
+    background: rgba($color: #fff, $alpha: 0.5);
+    border-radius: 50%;
+    outline: none;
+    margin: 2px;
+  }
+
+  &-active {
+    width: 11px;
+    height: 11px;
+    background: rgba($color: #d3c1ad, $alpha: 0.5) !important;
+  }
+}
+
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 181px;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.5s;
+
+  &:hover {
+    color: #998675;
+    transform: scale(1.2);
+    text-decoration: none;
+  }
+
+  &:active {
+    color: #fff;
+    transform: scale(1);
+  }
+
+
+  &__img {
+    fill: currentColor;
+    width: 100%;
+  }
+
+  &__txt {
+    font-family: Raleway;
+    font-size: 34px;
+    font-weight: 400;
+    text-align: right;
+  }
+}
+
+
+//!!!!!!!!!!!!!!! TITLES !!!!!!!!!!!!!!!!!!//
+
+.title {
+  @include title
+}
+
+.subtitle {
+  @include subtitle
+}
+
+//!!!!!!!!!!!!!!! CARD !!!!!!!!!!!!!!!!!!//
+
+.card {
+  position: relative;
+  display: block;
+  transition: all 0.5s;
+  cursor: pointer;
+
+  &-wpr {
+    display: none;
+
+    &_active {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+  }
+
+  &__control {
+    position: absolute;
+    display: flex;
+    left: 50%;
+    top: 190px;
+    transform: translate(-50%);
+
+    &-radio {
+      border: none;
+      background: transparent;
+      padding: 0;
+
+      &:after {
+        content: "";
+        display: block;
+        width: 15px;
+        height: 15px;
+        background-color: #a4a3a1;
+        background-clip: padding-box;
+        border: 2px solid rgba(0, 0, 0, 0);
+        border-radius: 50%;
+        transition: border 0.8s;
+
+      }
+
+      &:hover:after {
+        background-color: rgba(0, 0, 0, 0);
+        border: 2.0px solid #d3c1ad;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__date {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    min-height: 60px;
+    background-color: #252525;
+    border-radius: 0.0px 0.0px 3.0px 3.0px;
+
+    &-day,
+    &-month {
+      display: block;
+      text-align: center;
+      font-family: Montserrat;
+      font-size: 24px;
+      font-weight: 300;
+      color: #fff;
+    }
+
+    &-month {
+      font-family: Roboto;
+      font-size: 12px;
+      font-weight: 400;
+      display: block;
+      min-height: 25px;
+    }
+  }
+
+  &:hover .card__date-day {
+    background-color: $link-color;
+    transition: background-color 0.5s;
+
+  }
+
+  &:hover .card__date-month {
+    background-color: #a48d72;
+    transition: background-color 0.5s;
+
+  }
+
+  &:hover .card__img {
+    filter: brightness(40%);
+    transition: filter 0.5s;
+  }
+
+  &:hover .card__wpr {
+    background-color: #362f2d;
+    transition: background-color 0.5s;
+  }
+
+  &:hover .card__wpr::before {
+    background-color: #362f2d;
+    transition: background-color 0.5s;
+  }
+
+  &:hover .card__title {
+    color: #fff;
+    transition: color 0.5s;
+  }
+
+  &:hover .card__subtitle {
+    color: $link-color;
+    transition: color 0.5s;
+  }
+
+  &__title {
+    display: block;
+    font-family: Raleway;
+    font-size: 20px;
+    font-weight: 500;
+    color: $link-color;
+  }
+
+  &__subtitle {
+    display: block;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 300;
+    color: #d1d1d1;
+  }
+}
