@@ -6,12 +6,7 @@ const autoprefixer = require("gulp-autoprefixer");
 const rename = require("gulp-rename");
 const imagemin = require("gulp-imagemin");
 const htmlmin = require("gulp-htmlmin");
-const deploy = require('gulp-gh-pages');
-
-gulp.task('deploy', function () {
-  return gulp.src("./dist/**/*")
-    .pipe(deploy())
-});
+const deploy = require("gulp-gh-pages");
 
 gulp.task("server", function () {
   browserSync({
@@ -81,6 +76,10 @@ gulp.task("mailer", function () {
 
 gulp.task("images", function () {
   return gulp.src("src/img/**/*").pipe(imagemin()).pipe(gulp.dest("dist/img"));
+});
+
+gulp.task("deploy", function () {
+  return gulp.src("./dist/**/*").pipe(deploy());
 });
 
 gulp.task(

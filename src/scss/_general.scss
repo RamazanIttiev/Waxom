@@ -102,12 +102,20 @@
   }
 
   &__cart {
-    width: 18px;
-    height: 24px;
-    background: url(../icons/icon-cart.png) transparent no-repeat center/cover;
+    width: 22px;
+    height: 28px;
     border: none;
+    background: transparent;
     margin-right: 30px;
     transition: all 0.5s;
+    padding: 0;
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      fill: #fff;
+      transition: transform 0.5s;
+    }
 
     &:hover {
       transform: scale(1.4);
@@ -153,6 +161,8 @@
   }
 
   &__lable {
+    transition: transform 0.5s;
+
     &-img {
       width: 100%;
       height: 100%;
@@ -160,11 +170,11 @@
       transition: transform 0.5s;
     }
 
-    &:hover &-img {
+    &:hover {
       transform: scale(1.4);
     }
 
-    &:active &-img {
+    &:active {
       transform: scale(1);
     }
   }
@@ -502,6 +512,7 @@
   overflow: hidden;
 
   &__video {
+    max-width: 100%;
     display: block;
     width: 100%;
     height: 100%;
@@ -727,9 +738,10 @@
   }
 
   &__btn-wpr {
-    width: 85px;
+    width: 70px;
     margin: 40px auto 0;
-
+    display: flex;
+    justify-content: space-evenly;
   }
 
   &__btn {

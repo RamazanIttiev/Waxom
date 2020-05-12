@@ -77,7 +77,17 @@
 
     &__cart {
       &:hover {
-        transform: none;
+        transform: scale(1);
+      }
+
+      &:active {
+        transform: scale(0.8);
+      }
+    }
+
+    &__lable {
+      &:hover {
+        transform: scale(1);
       }
 
       &:active {
@@ -158,6 +168,7 @@
     }
 
     &__img {
+
       &:first-child {
         width: 570px;
         height: 300px;
@@ -195,7 +206,7 @@
 
       &:hover .projects-card__btn-link:hover,
       &:hover .projects-card__btn-search:hover {
-        transform: none;
+        transform: scale(1);
         fill: #fff;
         transition: transform 0.5s, fill 0.5s;
       }
@@ -222,7 +233,7 @@
 
     &__btn {
       &:hover {
-        transform: none;
+        transform: scale(1);
       }
 
       &:active {
@@ -264,7 +275,7 @@
     &__btn {
       &-img {
         &:hover {
-          transform: none;
+          transform: scale(1);
           fill: #000;
         }
 
@@ -282,6 +293,10 @@
       margin: 0 40px;
 
       &:hover {
+        transform: scale(1);
+      }
+
+      &:active {
         transform: scale(0.8);
       }
     }
@@ -386,7 +401,7 @@
       background: rgba(0, 0, 0, 0.75);
       top: 0;
       left: -100%;
-      padding: 0;
+      padding: 20px 0 0;
       z-index: 4;
       border-radius: 10px;
       overflow-y: scroll;
@@ -509,6 +524,7 @@
 
   .example {
     &__img {
+
       &:nth-child(2) {
         display: none;
       }
@@ -898,8 +914,6 @@
 
   .header {
     &__cart {
-      width: 16px;
-      height: 21px;
       margin-right: 20px;
     }
 
@@ -961,6 +975,10 @@
       &:last-child {
         width: 300px;
         height: 200px;
+
+        &:hover {
+          height: 200px;
+        }
       }
     }
 

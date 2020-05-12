@@ -25,5 +25,8 @@
     "> 1%",
     "maintained node versions",
     "not dead"
-  ]
+  ],
+  "dependencies": {
+    "lodash.template": "^4.5.0"
+  }
 }
